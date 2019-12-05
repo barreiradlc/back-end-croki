@@ -7,11 +7,11 @@ const Env = use('Env')
 /** @type {import('@adonisjs/ignitor/src/Helpers')} */
 const Helpers = use('Helpers')
 
-const conect = new Url(Env.get('DB_CONNECTION'))
-const host = new Url(Env.get('DB_HOST'))
-const port = new Url(Env.get('DB_PORT'))
-const user = new Url(Env.get('DB_USER'))
-const pass = new Url(Env.get('DB_PASSWORD'))
+// const conect = new Url(Env.get('DB_CONNECTION'))
+// const host = new Url(Env.get('DB_HOST'))
+// const port = new Url(Env.get('DB_PORT'))
+// const user = new Url(Env.get('DB_USER'))
+// const pass = new Url(Env.get('DB_PASSWORD'))
 
 
 console.log(pass.pathname)
