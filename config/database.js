@@ -14,7 +14,7 @@ const Helpers = use('Helpers')
 // const pass = new Url(Env.get('DB_PASSWORD'))
 
 
-console.log(pass.pathname)
+// console.log(pass.pathname)
 
 module.exports = {
   /*
