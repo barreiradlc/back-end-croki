@@ -7,8 +7,6 @@ const Env = use('Env')
 /** @type {import('@adonisjs/ignitor/src/Helpers')} */
 const Helpers = use('Helpers')
 
-const Url = require('url-parse')
-
 const conect = new Url(Env.get('DB_CONNECTION'))
 const host = new Url(Env.get('DB_HOST'))
 const port = new Url(Env.get('DB_PORT'))
