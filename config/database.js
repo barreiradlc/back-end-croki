@@ -62,7 +62,7 @@ module.exports = {
     client: 'mysql',
     connection: {
       host: Env.get('DB_HOST','remotemysql.com'),
-      port: Env.get('DB_PORT','3306'),
+      port: Env.get('DB_PORT',''),
       user: Env.get('DB_USER', 'ikzLBjR4Tu'),
       password: Env.get('DB_PASSWORD','ThWhzF18fL'),
       database: Env.get('DB_DATABASE','ikzLBjR4Tu')

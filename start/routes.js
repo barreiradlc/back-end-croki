@@ -24,4 +24,8 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Estou vivo' }
 })
+
+
 Route.post('/users', 'UserController.create')
+
+Route.post('/sessions', 'SessionController.create')
