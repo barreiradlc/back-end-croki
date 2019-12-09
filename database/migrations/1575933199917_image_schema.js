@@ -43,3 +43,5 @@ class ImageSchema extends Schema {
     this.drop('images')
   }
 }
+
+module.exports = ImageSchema

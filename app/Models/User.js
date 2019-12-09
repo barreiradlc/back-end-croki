@@ -7,7 +7,7 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
-  static boot() {
+  static boot () {
     super.boot()
 
     /**
@@ -19,8 +19,6 @@ class User extends Model {
         userInstance.password = await Hash.make(userInstance.password)
       }
     })
-
-    // 
   }
 
   /**
@@ -33,14 +31,12 @@ class User extends Model {
    *
    * @return {Object}
    */
-
-  //  relações
-  properties() {
-    return this.hasMany('App/Models/Property')
-  }
-
-  tokens() {
+  tokens () {
     return this.hasMany('App/Models/Token')
+  }
+  
+  properties () {
+    return this.hasMany('App/Models/Property')
   }
 }
 
