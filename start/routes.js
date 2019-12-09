@@ -21,11 +21,17 @@
 
 const Route = use('Route')
 
+// teste se está tudo ok
 Route.get('/', () => {
-  return { greeting: 'Estou vivo' }
+  return { "Boas vindas": 'Estou vivo' }
 })
 
-
+// cadastro
 Route.post('/users', 'UserController.create')
-
+// login
 Route.post('/sessions', 'SessionController.create')
+
+// projetos
+Route.resource('properties', 'PropertyController')
+  .apiOnly()
+  .middleware('auth')
