@@ -22,10 +22,22 @@ class PropertyController {
    */
   // async index ({ request, response, view }) {
   // }
-  async index() {
-    // lista todos
-    const properties = Property.all()
-
+  // async index() {
+  //   // lista todos
+  //   const properties = Property.all()
+  
+  //   return properties
+  // }
+  
+  async index ({ request }) {
+    //   // lista todos baseado na distancia
+    const { latitude, longitude } = request.all()
+  
+    const properties = Property.query()
+    .with('images')
+    .nearBy(latitude, longitude, 10)
+    .fetch()
+  
     return properties
   }
 
@@ -48,7 +60,22 @@ class PropertyController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store({ request, response }) {
+  async store ({ auth, request, response }) {
+    const { id } = auth.user
+    const data = request.only([
+      'title',
+      'address',
+      'latitude',
+      'longitude',
+      'price',
+      'cep',
+      'dimX',
+      'dimY'
+    ])
+  
+    const property = await Property.create({ ...data, user_id: id })
+  
+    return property
   }
 
   /**
@@ -88,7 +115,25 @@ class PropertyController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update({ params, request, response }) {
+  async update ({ params, request, response }) {
+    const property = await Property.findOrFail(params.id)
+  
+    const data = request.only([
+      'title',
+      'address',  
+      'latitude',
+      'longitude',
+      'price',
+      'cep',
+      'dimY',
+      'dimX'
+    ])
+  
+    property.merge(data)
+  
+    await property.save()
+  
+    return property
   }
 
   /**

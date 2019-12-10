@@ -35,3 +35,10 @@ Route.post('/sessions', 'SessionController.create')
 Route.resource('properties', 'PropertyController')
   .apiOnly()
   .middleware('auth')
+  
+// imagens ADIÇÂO
+Route.post('properties/:id/images', 'ImageController.store')
+.middleware('auth')
+
+// imagens RENDERIZAÇÂO
+  Route.get('images/:path', 'ImageController.show')
