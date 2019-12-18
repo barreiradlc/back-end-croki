@@ -4,7 +4,7 @@
 
 git add .
 
-git commit -am "Atualização de projetos com imagens"
+git commit -am "Projetos por usuário"
 
 git push heroku master
 

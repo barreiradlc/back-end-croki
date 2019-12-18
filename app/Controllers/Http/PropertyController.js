@@ -45,7 +45,7 @@ class PropertyController {
     //   // lista todos baseado na autenticação
     const { id } = auth.user
 
-    const properties = Property
+    const properties = await Property
       .query()
       .where('user_id', '=', id)
       .fetch()
