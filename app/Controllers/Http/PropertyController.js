@@ -37,7 +37,18 @@ class PropertyController {
     .with('images')
     .nearBy(latitude, longitude, 10)
     .fetch()
+    
+    return properties
+  }
   
+  async meusPRJ ({ auth, request }) {
+    //   // lista todos baseado na autenticação
+    const { id } = auth.user
+
+    const properties = Property
+      .query()
+      .where('user_id', '=', id)
+      .fetch()
     return properties
   }
 
@@ -89,6 +100,7 @@ class PropertyController {
    */
   async show({ params }) {
     // busca por id incluso nos parâmetros de url
+    
     const property = await Property.findOrFail(params.id)
     // busca por imagens associadas a ele
     await property.load('images')
