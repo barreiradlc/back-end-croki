@@ -5,6 +5,8 @@
 
 // module.exports = SessionController
 
+const User = use('App/Models/User')
+
 
 'use strict'
 
@@ -14,7 +16,21 @@ class SessionController {
 
     const token = await auth.attempt(email, password)
 
-    return token
+
+    const perfil =  await User
+      .query()
+      .where('email', '=', email)
+      .fetch()
+
+    const usuario = await {
+      token,
+      perfil
+    }
+
+    
+
+    return usuario
+    // return token
   }
 }
 
