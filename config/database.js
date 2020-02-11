@@ -63,9 +63,9 @@ module.exports = {
     connection: {
       host: Env.get('DB_HOST','remotemysql.com'),
       port: Env.get('DB_PORT',''),
-      user: Env.get('DB_USER', 'ikzLBjR4Tu'),
-      password: Env.get('DB_PASSWORD','ThWhzF18fL'),
-      database: Env.get('DB_DATABASE','ikzLBjR4Tu')
+      user: Env.get('DB_USER', 'iOIuJiVIus'),
+      password: Env.get('DB_PASSWORD','MRGBV4s0Kh'),
+      database: Env.get('DB_DATABASE','iOIuJiVIus')
     },
 
       debug: Env.get('DB_DEBUG', false)

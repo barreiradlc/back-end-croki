@@ -8,6 +8,7 @@ class PropertiesSchema extends Schema {
     this.table('properties', (table) => {
       // alter table
       
+      
       table.integer('dimY').alter()
       table.integer('dimX').alter()
       table.string('modelo3d')

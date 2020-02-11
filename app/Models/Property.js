@@ -25,9 +25,16 @@ class Property extends Model {
         return this.belongsTo('App/Models/User')
     }
 
-    images() {
-        return this.hasMany('App/Models/Image')
+    // IMAGENS?
+    // images() {
+    //     return this.hasMany('App/Models/Image')
+    // }
+    
+    template () {
+        return this.hasOne('App/Models/Template')
     }
+
+    
 }
 
 module.exports = Property

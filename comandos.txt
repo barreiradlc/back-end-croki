@@ -1,0 +1,5 @@
+// run app
+adonis serve --dev
+
+// migration
+adonis migration:run

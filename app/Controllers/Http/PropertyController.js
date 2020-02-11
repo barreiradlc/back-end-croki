@@ -34,9 +34,9 @@ class PropertyController {
     const { latitude, longitude } = request.all()
   
     const properties = Property.query()
-    .with('images')
-    .nearBy(latitude, longitude, 10)
-    .fetch()
+      .with('images')
+      // .nearBy(latitude, longitude, 10)
+      .fetch()
     
     return properties
   }
@@ -73,6 +73,7 @@ class PropertyController {
    */
   async store ({ auth, request, response }) {
     const { id } = auth.user
+    
     const data = request.only([
       'title',
       'address',

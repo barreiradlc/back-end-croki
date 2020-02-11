@@ -47,3 +47,18 @@ Route.post('properties/:id/images', 'ImageController.store')
 
 // imagens RENDERIZAÇÂO
   Route.get('images/:path', 'ImageController.show')
+
+// modelo
+Route.resource('templates', 'TemplateController')
+  .apiOnly()
+  .middleware('auth')
+
+// deisgn de interiores
+Route.resource('designs', 'DesignController')
+  .apiOnly()
+  .middleware('auth')
+
+// paleta de cores
+Route.resource('paletas', 'PaletaController')
+  .apiOnly()
+  .middleware('auth')
