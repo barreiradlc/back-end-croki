@@ -1,5 +1,7 @@
 'use strict'
 
+ const Design = use('App/Models/Design') 
+
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
@@ -41,6 +43,16 @@ class DesignController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+
+    const data = request.only([
+      'title',
+      'description',
+    ])
+
+    const design = Design.create( data )
+
+    return design
+
   }
 
   /**

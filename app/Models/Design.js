@@ -6,7 +6,7 @@ const Model = use('Model')
 class Design extends Model {
 
     template() {
-        return this.belongsTo('App/Models/Template')
+        return this.belongsToMany('App/Models/Template')
     }
 }
 

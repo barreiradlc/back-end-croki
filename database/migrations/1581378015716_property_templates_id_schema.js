@@ -11,7 +11,7 @@ class PropertyTemplatesIdSchema extends Schema {
         .integer('template_id')
         .unsigned()
         .references('id')
-        .inTable('templates')
+      .inTable('templates')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
     })

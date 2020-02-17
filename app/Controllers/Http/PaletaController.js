@@ -4,6 +4,9 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Paleta = use('App/Models/Paleta')
+
+
 /**
  * Resourceful controller for interacting with paletas
  */
@@ -41,6 +44,23 @@ class PaletaController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+
+    const data = request.only([
+      'title',
+      'description',
+      'cor1',
+      'cor2',
+      'cor3',
+      'cor4',
+      'cor5',
+      'cor6',
+      'cor7',
+      'cor8'
+    ])
+
+    const paleta = Paleta.create( data )
+
+    return paleta
   }
 
   /**

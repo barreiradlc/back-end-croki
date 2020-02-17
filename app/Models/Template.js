@@ -17,11 +17,11 @@ class Template extends Model {
   }
   
   design () {
-    return this.hasOne('App/Models/Design')
+    return this.belongsTo('App/Models/Design')
   }
 
   paleta () {
-    return this.hasOne('App/Models/Paleta')
+    return this.belongsTo('App/Models/Paleta')
   }
 
 }

@@ -5,6 +5,8 @@
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 const Template = use('App/Models/Template')
+const Design = use('App/Models/Design')
+const Paleta = use('App/Models/Paleta')
 
 /**
  * Resourceful controller for interacting with templates
@@ -42,11 +44,9 @@ class TemplateController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ auth, request, response }) {
+  async store ({ auth, request, response, params }) {
+
     const { id } = auth.user
-    
-    console.debug(request.title)
-    // console.debug(request)
 
     const data = request.only([
       'title',
@@ -55,12 +55,16 @@ class TemplateController {
       'banheiro',
       'quarto',
       'garagem',
+      'design_id',
+      'paleta_id',
     ])
 
     console.debug(data)
 
     const template = await Template.create( data )
+
     return template
+
   }
 
   /**
@@ -73,6 +77,20 @@ class TemplateController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+
+    const template = await Template
+      .query('id = ',params.id)
+      .with('design')
+      .with('paleta')
+      .fetch()
+    // console.debug(template)
+    // const TemplateDesign = template.design().fetch()
+    
+    // console.debug(TemplateDesign)
+    // await template.load('design')
+
+
+    return template
   }
 
   /**
