@@ -21,7 +21,6 @@ class PaletaController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-    
   
     const paletas = Paleta.query()
       // .with('images')
