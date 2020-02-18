@@ -21,7 +21,23 @@ class TemplateController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async index ({ request, params}) {
+
+    // const { latitude, longitude } = request.all()
+  
+    
+    let busca  = request.get()
+    
+
+    const templates = Template.query()
+      // .with('images')
+      // .where('title', '=', busca)
+      // .nearBy(latitude, longitude, 10)
+      .fetch()
+
+    
+    return templates
+
   }
 
   /**

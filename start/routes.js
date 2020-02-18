@@ -51,14 +51,14 @@ Route.post('properties/:id/images', 'ImageController.store')
 // modelo
 Route.resource('templates', 'TemplateController')
   .apiOnly()
-  .middleware('auth')
+  // .middleware('auth')
 
 // deisgn de interiores
 Route.resource('designs', 'DesignController')
   .apiOnly()
-  .middleware('auth')
+  // .middleware('auth')
 
 // paleta de cores
 Route.resource('paletas', 'PaletaController')
   .apiOnly()
-  .middleware('auth')
+  // .middleware('auth')
