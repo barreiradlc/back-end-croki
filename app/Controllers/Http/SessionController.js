@@ -7,6 +7,8 @@
 
 const User = use('App/Models/User')
 
+const { getPublicToken } = require('../../../routes/common/oauth');
+
 'use strict'
 
 
@@ -15,13 +17,13 @@ const User = use('App/Models/User')
 
 
 class SessionController {
-  async create ({ request, auth }) { 
+  async create({ request, auth }) {
     const { email, password } = request.all()
 
     const token = await auth.attempt(email, password)
 
 
-    const perfil =  await User
+    const perfil = await User
       .query()
       .where('email', '=', email)
       .fetch()
@@ -31,10 +33,26 @@ class SessionController {
       perfil
     }
 
-    
+
 
     return usuario
     // return token
+  }
+  async forge({res}) {
+
+    try {
+      const token = await getPublicToken();
+      return({
+        access_token: token.access_token,
+        expires_in: token.expires_in
+      });
+    } catch (err) {
+      console.debug({err});
+    }
+
+
+
+
   }
 }
 

@@ -26,6 +26,8 @@ Route.get('/', () => {
   return { "Boas vindas": 'Estou vivo' }
 })
 
+Route.get('/jwt', 'SessionController.forge')
+
 // cadastro
 Route.post('/users', 'UserController.create')
 // login
