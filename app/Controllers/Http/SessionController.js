@@ -7,7 +7,7 @@
 
 const User = use('App/Models/User')
 
-const { getPublicToken } = require('../../../routes/common/oauth');
+const { getInternalToken } = require('../../../routes/common/oauth');
 
 'use strict'
 
@@ -41,7 +41,7 @@ class SessionController {
   async forge({res}) {
 
     try {
-      const token = await getPublicToken();
+      const token = await getInternalToken();
       return({
         access_token: token.access_token,
         expires_in: token.expires_in
