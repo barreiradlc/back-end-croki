@@ -33,7 +33,7 @@ Route.post('/users', 'UserController.create')
 // login
 Route.post('/sessions', 'SessionController.create')
 
-// projetos
+// projetosB
 Route.resource('properties', 'PropertyController')
   .apiOnly()
   .middleware('auth')
