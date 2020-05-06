@@ -67,7 +67,6 @@ module.exports = {
       password: Env.get('DB_PASSWORD','123123123'),
       database: Env.get('DB_DATABASE','eproj_123')
     },
-
       debug: Env.get('DB_DEBUG', false)
     },
 
