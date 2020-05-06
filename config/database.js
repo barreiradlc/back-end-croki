@@ -61,7 +61,7 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: Env.get('DB_HOST','https://db4free.net/'),
+      host: Env.get('DB_HOST','db4free.net'),
       port: Env.get('DB_PORT','3306'),
       user: Env.get('DB_USER', 'eproj_123'),
       password: Env.get('DB_PASSWORD','123123123'),
