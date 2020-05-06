@@ -61,11 +61,11 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: Env.get('DB_HOST','remotemysql.com'),
-      port: Env.get('DB_PORT',''),
-      user: Env.get('DB_USER', 'iOIuJiVIus'),
-      password: Env.get('DB_PASSWORD','MRGBV4s0Kh'),
-      database: Env.get('DB_DATABASE','iOIuJiVIus')
+      host: Env.get('DB_HOST','https://db4free.net/'),
+      port: Env.get('DB_PORT','3306'),
+      user: Env.get('DB_USER', 'eproj_123'),
+      password: Env.get('DB_PASSWORD','123123123'),
+      database: Env.get('DB_DATABASE','eproj_123')
     },
 
       debug: Env.get('DB_DEBUG', false)
