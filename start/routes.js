@@ -29,6 +29,7 @@ Route.get('/', () => {
 Route.get('/jwt', 'SessionController.forge')
 
 // cadastro
+Route.get('/users/mail', 'UserController.mail')
 Route.post('/users', 'UserController.create')
 // login
 Route.post('/sessions', 'SessionController.create')

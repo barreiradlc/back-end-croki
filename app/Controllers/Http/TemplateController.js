@@ -62,7 +62,8 @@ class TemplateController {
    */
   async store ({ auth, request, response, params }) {
 
-    const { id } = auth.user
+    // const { id } = auth.user
+    const id = 1
 
     const data = request.only([
       'title',

@@ -38,6 +38,7 @@ class SessionController {
     return usuario
     // return token
   }
+  
   async forge({res}) {
 
     try {
