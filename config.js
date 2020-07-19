@@ -25,7 +25,7 @@ module.exports = {
         client_secret: 'vTHPMoJn9706oL72',
         callback_url: 'https://localhost:3000'
     },
-    
+
     // credentials: {
     //     client_id: 'EhGS8JhnlQ8sOP1yxRYAgUdyjTwWDbGs',
     //     client_secret: 'vTHPMoJn9706oL72',
@@ -33,7 +33,9 @@ module.exports = {
     // },
     scopes: {
         // Required scopes for the server-side application
-        internal: ['bucket:create', 'bucket:read', 'data:read', 'data:create', 'data:write'],
+        // internal: ['bucket:create', 'bucket:read', 'data:read', 'data:create', 'data:write'],
+        internal: ['data:read', 'data:write', 'data:create', 'bucket:read', 'bucket:create'],
+
         // Required scope for the client-side viewer
         public: ['viewables:read']
     }

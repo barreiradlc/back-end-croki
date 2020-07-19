@@ -1,6 +1,8 @@
 'use strict'
 
  const Design = use('App/Models/Design') 
+ const axios = require('axios');
+
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -20,6 +22,16 @@ class DesignController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    let uri = 'http://spreadsheets.google.com/feeds/worksheets/1AJbjLg4o_ImhEiuuTfuWOiYpJuGFsyeF-TdCnjyDuaw/public/basic?alt=json'
+    
+    return axios.get(uri)
+    .then((res) => {
+      console.log(res)
+      console.log('res')
+      console.log(res.feed)
+    })
+    
+
   }
 
   /**

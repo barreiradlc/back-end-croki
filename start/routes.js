@@ -27,6 +27,7 @@ Route.get('/', () => {
 })
 
 Route.get('/jwt', 'SessionController.forge')
+Route.get('/metadata/:urn', 'SessionController.getProperties')
 
 // cadastro
 Route.get('/users/mail', 'UserController.mail')
@@ -38,12 +39,12 @@ Route.post('/sessions', 'SessionController.create')
 Route.resource('properties', 'PropertyController')
   .apiOnly()
   .middleware('auth')
-  
-  
+
+
 // projetos por usuário
 Route.get('meusPRJ', 'PropertyController.meusPRJ')
   .middleware('auth')
-  
+
 // imagens ADIÇÂO
 Route.post('properties/:id/images', 'ImageController.store')
 .middleware('auth')
